@@ -15,8 +15,8 @@ const TransferImage = (props: SVGProps<SVGSVGElement>) => (
       height="65.5"
       rx="6.75"
       transform="matrix(0.865865 0.500278 -0.871576 0.490261 189.756 88.938)"
-      fill="#D4D4D8"
-      stroke="#52525B"
+      fill="rgb(212 212 216)"
+      stroke="rgb(82 82 91)"
       strokeWidth="1.5"
     />
     <rect
@@ -27,7 +27,7 @@ const TransferImage = (props: SVGProps<SVGSVGElement>) => (
       rx="6.75"
       transform="matrix(0.865865 0.500278 -0.871576 0.490261 189.756 85.938)"
       fill="white"
-      stroke="#52525B"
+      stroke="rgb(82 82 91)"
       strokeWidth="1.5"
     />
     <path
@@ -98,7 +98,7 @@ const TransferImage = (props: SVGProps<SVGSVGElement>) => (
       height="3"
       rx="1.5"
       transform="matrix(0.865865 0.500278 -0.871576 0.490261 196.447 92.7925)"
-      fill="#D4D4D8"
+      fill="rgb(212 212 216)"
     />
     <rect
       x="0.00428286"
@@ -145,7 +145,7 @@ const TransferImage = (props: SVGProps<SVGSVGElement>) => (
     />
     <path
       d="M92.3603 64.4564C90.9277 63.6287 88.59 63.6152 87.148 64.4264C85.7059 65.2375 85.6983 66.5703 87.1308 67.398C88.5634 68.2257 90.9011 68.2392 92.3432 67.428C93.7852 66.6169 93.7929 65.2841 92.3603 64.4564ZM88.4382 66.6626C87.7221 66.2488 87.726 65.5822 88.4468 65.1768C89.1676 64.7713 90.3369 64.7781 91.0529 65.1918C91.769 65.6055 91.7652 66.2722 91.0444 66.6776C90.3236 67.083 89.1543 67.0763 88.4382 66.6626Z"
-      fill="#A1A1AA"
+      fill="rgb(161 161 170)"
     />
     <rect
       width="17"
@@ -168,7 +168,7 @@ const TransferImage = (props: SVGProps<SVGSVGElement>) => (
     <g clip-path="url(#clip0_20786_38285)">
       <path
         d="M133.106 82.3025L140.49 82.345L140.514 78.1353"
-        stroke="#A1A1AA"
+        stroke="rgb(161 161 170)"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

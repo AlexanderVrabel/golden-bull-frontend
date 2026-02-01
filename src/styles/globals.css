@@ -35,8 +35,8 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    border: 1px solid #212121;
-    -webkit-text-fill-color: #212121;
+    border: 1px solid rgb(33 33 33);
+    -webkit-text-fill-color: rgb(33 33 33);
     -webkit-box-shadow: 0 0 0px 1000px #fff inset;
     transition: background-color 5000s ease-in-out 0s;
   }
@@ -55,7 +55,7 @@
   }
 
   .contrast-btn {
-    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+    @apply px-4 py-2 border border-grey-90 rounded-full hover:bg-grey-90 hover:text-white transition-colors duration-200 ease-in;
   }
 
   .text-xsmall-regular {
