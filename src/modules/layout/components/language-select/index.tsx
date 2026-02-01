@@ -120,8 +120,8 @@ const LanguageSelect = ({
         defaultValue={
           currentLocale
             ? options.find(
-                (o) => o.code.toLowerCase() === currentLocale.toLowerCase()
-              ) ?? DEFAULT_OPTION
+              (o) => o.code.toLowerCase() === currentLocale.toLowerCase()
+            ) ?? DEFAULT_OPTION
             : DEFAULT_OPTION
         }
         disabled={isPending}
