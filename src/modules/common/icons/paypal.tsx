@@ -9,7 +9,7 @@ const PayPal = () => {
     >
       <path
         fill="none"
-        stroke="#303c42"
+        stroke="rgb(48 60 66)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -17,7 +17,7 @@ const PayPal = () => {
       ></path>
       <path
         fill="none"
-        stroke="#303c42"
+        stroke="rgb(48 60 66)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

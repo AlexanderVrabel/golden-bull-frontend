@@ -22,17 +22,41 @@ module.exports = {
       },
       colors: {
         grey: {
-          0: "#FFFFFF",
-          5: "#F9FAFB",
-          10: "#F3F4F6",
-          20: "#E5E7EB",
-          30: "#D1D5DB",
-          40: "#9CA3AF",
-          50: "#6B7280",
-          60: "#4B5563",
-          70: "#374151",
-          80: "#1F2937",
-          90: "#111827",
+          0: "#FFFFFF",      // White backgrounds
+          5: "#F9FAFB",      // Very light grey
+          10: "#F3F4F6",     // Light grey backgrounds
+          20: "#E5E7EB",     // Borders
+          30: "#D1D5DB",     // Disabled states
+          40: "#9CA3AF",     // Icons, secondary text
+          50: "#6B7280",     // Body text
+          60: "#4B5563",     // Headings
+          70: "#374151",     // Dark text
+          80: "#1F2937",     // Very dark
+          90: "#111827",     // Almost black
+        },
+        blue: {
+          50: "#f0f9ff",
+          100: "#e0f2fe",
+          200: "#bae6fd",
+          300: "#7dd3fc",
+          400: "#38bdf8",
+          500: "#0ea5e9",
+          600: "#0284c7",
+          700: "#0369a1",
+          800: "#075985",
+          900: "#0c4a6e",
+        },
+        brand: {
+          slate: {
+            dark: "#1e3a8a",      // Deep blue - PayPal icon
+            medium: "#3b82f6",    // Medium blue - Stripe input text
+          },
+          zinc: {
+            100: "#dbeafe",       // Very light blue - Transfer image fills
+            400: "#60a5fa",       // Light blue - Transfer image accents
+            600: "#2563eb",       // Strong blue - Transfer image strokes
+            900: "#1e40af",       // Dark blue - Autofill text/border
+          },
         },
       },
       borderRadius: {
