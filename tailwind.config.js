@@ -22,53 +22,78 @@ module.exports = {
       },
       colors: {
         grey: {
-          0: "#FFFFFF",      // White backgrounds
-          5: "#F9FAFB",      // Very light grey
-          10: "#F3F4F6",     // Light grey backgrounds
-          20: "#E5E7EB",     // Borders
-          30: "#D1D5DB",     // Disabled states
-          40: "#9CA3AF",     // Icons, secondary text
-          50: "#6B7280",     // Body text
-          60: "#4B5563",     // Headings
-          70: "#374151",     // Dark text
-          80: "#1F2937",     // Very dark
-          90: "#111827",     // Almost black
+          0: "#FFFBF5", // Warm white background
+          5: "#FFF4E6", // Very light champagne
+          10: "#FFEFD5", // Light golden background
+          20: "#FFE4B5", // Golden borders
+          30: "#FFD700", // Soft gold
+          40: "#DAA520", // Goldenrod - icons, secondary text
+          50: "#B8860B", // Dark goldenrod - body text
+          60: "#996515", // Bronze - headings
+          70: "#8B6914", // Dark bronze
+          80: "#6B5504", // Very dark gold
+          90: "#4A3C02", // Almost black with gold tint
         },
         blue: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          800: "#075985",
-          900: "#0c4a6e",
+          50: "#FFF8DC", // Cornsilk (golden tint)
+          100: "#FAEBD7", // Antique white
+          200: "#F5DEB3", // Wheat
+          300: "#DEB887", // Burlywood
+          400: "#D2B48C", // Tan
+          500: "#BC8F8F", // Rosy brown
+          600: "#A0826D", // Medium brown
+          700: "#8B7355", // Dark tan
+          800: "#6B5D52", // Dark brown
+          900: "#4E4540", // Very dark brown
         },
         violet: {
-          50: "#faf5ff",
-          60: "#8b5cf6",   // Active states, focus states
-          100: "#ede9fe",
-          200: "#ddd6fe",
-          300: "#c4b5fd",
-          400: "#a78bfa",
-          500: "#8b5cf6",
-          600: "#7c3aed",
-          700: "#6d28d9",
-          800: "#5b21b6",
-          900: "#4c1d95",
+          50: "#FFF8DC",
+          60: "#DAA520", // Goldenrod for active states
+          100: "#FAEBD7",
+          200: "#F5DEB3",
+          300: "#DEB887",
+          400: "#D2B48C",
+          500: "#BC8F8F",
+          600: "#A0826D",
+          700: "#8B7355",
+          800: "#6B5D52",
+          900: "#4E4540",
         },
         brand: {
           slate: {
-            dark: "#1e3a8a",      // Deep blue - PayPal icon
-            medium: "#3b82f6",    // Medium blue - Stripe input text
+            dark: "#8B6914", // Dark bronze
+            medium: "#DAA520", // Goldenrod
           },
           zinc: {
-            100: "#dbeafe",       // Very light blue - Transfer image fills
-            400: "#60a5fa",       // Light blue - Transfer image accents
-            600: "#2563eb",       // Strong blue - Transfer image strokes
-            900: "#1e40af",       // Dark blue - Autofill text/border
+            100: "#FFEFD5", // Light golden
+            400: "#FFD700", // Gold
+            600: "#DAA520", // Goldenrod
+            900: "#996515", // Bronze
+          },
+        },
+        // Medusa UI color overrides - these control bg-ui-*, text-ui-*, border-ui-* classes
+        ui: {
+          bg: {
+            base: "#FFFBF5", // Warm white backgrounds
+            subtle: "#FFF4E6", // Very light champagne
+            field: "#FFFBF5", // Input fields
+            "field-hover": "#FFF4E6", // Input hover
+            disabled: "#FFEFD5", // Disabled backgrounds
+            interactive: "#DAA520", // Interactive elements (goldenrod)
+            modal: "rgba(139, 105, 20, 0.5)", // Modal/menu background (dark bronze with opacity)
+          },
+          fg: {
+            base: "#4A3C02", // Almost black with gold tint
+            subtle: "#B8860B", // Dark goldenrod
+            muted: "#DAA520", // Goldenrod
+            disabled: "#FFD700", // Soft gold
+            interactive: "#996515", // Bronze for links
+            "on-color": "#FFFBF5", // Text on dark backgrounds (warm white)
+          },
+          border: {
+            base: "#FFE4B5", // Golden borders
+            strong: "#FFD700", // Soft gold borders
+            interactive: "#DAA520", // Goldenrod interactive
           },
         },
       },
