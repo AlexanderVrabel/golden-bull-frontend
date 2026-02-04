@@ -22,7 +22,7 @@ module.exports = {
       },
       colors: {
         grey: {
-          0: "#FFFBF5", // Warm white background
+          0: "#FFF4E6", // Warm white background
           5: "#FFF4E6", // Very light champagne
           10: "#FFEFD5", // Light golden background
           20: "#FFE4B5", // Golden borders
@@ -74,12 +74,12 @@ module.exports = {
         // Medusa UI color overrides - these control bg-ui-*, text-ui-*, border-ui-* classes
         ui: {
           bg: {
-            base: "#FFFBF5", // Warm white backgrounds
+            base: "#FFEFD5", // Warm white backgrounds
             subtle: "#FFF4E6", // Very light champagne
             field: "#FFFBF5", // Input fields
             "field-hover": "#FFF4E6", // Input hover
             disabled: "#FFEFD5", // Disabled backgrounds
-            interactive: "#DAA520", // Interactive elements (goldenrod)
+            interactive: "#020202ff", // Interactive elements (goldenrod)
             modal: "rgba(139, 105, 20, 0.5)", // Modal/menu background (dark bronze with opacity)
           },
           fg: {

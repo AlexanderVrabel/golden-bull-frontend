@@ -1,9 +1,9 @@
-import { Metadata } from "next"
-import { notFound } from "next/navigation"
 import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
-import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
+import ProductTemplate from "@modules/products/templates"
+import { Metadata } from "next"
+import { notFound } from "next/navigation"
 
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
@@ -88,10 +88,10 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.title} | Medusa Store`,
+    title: `${product.title} | Golden bull`,
     description: `${product.title}`,
     openGraph: {
-      title: `${product.title} | Medusa Store`,
+      title: `${product.title} | Golden bull`,
       description: `${product.title}`,
       images: product.thumbnail ? [product.thumbnail] : [],
     },
