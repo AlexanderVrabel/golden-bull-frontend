@@ -11,7 +11,7 @@ import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Profile",
-  description: "View and edit your Golden bull profile.",
+  description: "View and edit your Gold Bull profile.",
 }
 
 export default async function Profile() {
