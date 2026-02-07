@@ -5,7 +5,7 @@ import LoginTemplate from "@modules/account/templates/login-template"
 
 export const metadata: Metadata = {
   title: "Sign in",
-  description: "Sign in to your Medusa Store account.",
+  description: "Sign in to your Gold Bull account.",
 }
 
 export default async function Login() {

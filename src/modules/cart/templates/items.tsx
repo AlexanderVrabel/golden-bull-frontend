@@ -14,15 +14,15 @@ const ItemsTemplate = ({ cart, translations }: ItemsTemplateProps) => {
   const items = cart?.items
   return (
     <div>
-      <div className="pb-3 flex items-center">
+      <div className="pb-3 px-5 flex items-center">
         <Heading className="text-[2rem] leading-[2.75rem]">
           {translations.title}
         </Heading>
       </div>
       <Table>
-        <Table.Header className="border-t-0">
+        <Table.Header className="border-0">
           <Table.Row className="text-ui-fg-subtle txt-medium-plus">
-            <Table.HeaderCell className="!pl-0">
+            <Table.HeaderCell className="!pl-4">
               {translations.item}
             </Table.HeaderCell>
             <Table.HeaderCell></Table.HeaderCell>
@@ -30,7 +30,7 @@ const ItemsTemplate = ({ cart, translations }: ItemsTemplateProps) => {
             <Table.HeaderCell className="hidden small:table-cell">
               {translations.price}
             </Table.HeaderCell>
-            <Table.HeaderCell className="!pr-0 text-right">
+            <Table.HeaderCell className="!pr-4 text-right">
               {translations.total}
             </Table.HeaderCell>
           </Table.Row>
