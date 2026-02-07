@@ -7,6 +7,7 @@ import { StoreRegion } from "@medusajs/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import { getTranslation } from "@lib/i18n/server"
 
 export default async function Nav() {
   const [regions, locales, currentLocale] = await Promise.all([
@@ -15,13 +16,28 @@ export default async function Nav() {
     getLocale(),
   ])
 
+  const { t } = await getTranslation(currentLocale || 'en', 'common')
+
+  const sideMenuTranslations = {
+    menu: t('side_menu.menu'),
+    home: t('nav.home'),
+    store: t('nav.store'),
+    account: t('nav.account'),
+    cart: t('nav.cart'),
+  }
+
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
       <header className="relative h-16 mx-auto border-b duration-200 bg-grey-0 border-ui-border-base">
         <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
-              <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
+              <SideMenu
+                regions={regions}
+                locales={locales}
+                currentLocale={currentLocale}
+                translations={sideMenuTranslations}
+              />
             </div>
           </div>
 
@@ -42,7 +58,7 @@ export default async function Nav() {
                 href="/account"
                 data-testid="nav-account-link"
               >
-                Account
+                {t('nav.account')}
               </LocalizedClientLink>
             </div>
             <Suspense
@@ -52,7 +68,7 @@ export default async function Nav() {
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  {t('nav.cart')} (0)
                 </LocalizedClientLink>
               }
             >

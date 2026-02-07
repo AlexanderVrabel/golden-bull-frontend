@@ -10,15 +10,29 @@ export enum LOGIN_VIEW {
   REGISTER = "register",
 }
 
-const LoginTemplate = () => {
+type LoginTemplateProps = {
+  loginTranslations: any
+  registerTranslations: any
+}
+
+const LoginTemplate = ({
+  loginTranslations,
+  registerTranslations,
+}: LoginTemplateProps) => {
   const [currentView, setCurrentView] = useState("sign-in")
 
   return (
     <div className="w-full flex justify-start px-8 py-8">
       {currentView === "sign-in" ? (
-        <Login setCurrentView={setCurrentView} />
+        <Login
+          setCurrentView={setCurrentView}
+          translations={loginTranslations}
+        />
       ) : (
-        <Register setCurrentView={setCurrentView} />
+        <Register
+          setCurrentView={setCurrentView}
+          translations={registerTranslations}
+        />
       )}
     </div>
   )

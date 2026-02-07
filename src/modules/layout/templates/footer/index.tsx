@@ -3,13 +3,17 @@ import { listCollections } from "@lib/data/collections"
 import { Text, clx } from "@medusajs/ui"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
-import MedusaCTA from "@modules/layout/components/medusa-cta"
+import { getLocale } from "@lib/data/locale-actions"
+import { getTranslation } from "@lib/i18n/server"
 
 export default async function Footer() {
+  const currentLocale = await getLocale()
   const { collections } = await listCollections({
     fields: "*products",
   })
   const productCategories = await listCategories()
+
+  const { t } = await getTranslation(currentLocale || 'en', 'common')
 
   return (
     <footer className="border-t border-ui-border-base w-full">
@@ -26,19 +30,18 @@ export default async function Footer() {
               <p></p>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
                 <li>
-                  Email:
+                  {t('footer.email')}
                 </li>
                 <li>
-                  Contact:
+                  {t('footer.phone')}
                 </li>
                 <li>
-                  <a
-                    href="http://localhost:8000/sk/customer-service"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/customer-service"
                     className="hover:text-ui-fg-base"
                   >
-                    Customer Service
-                  </a>
+                    {t('footer.support')}
+                  </LocalizedClientLink>
                 </li>
               </ul>
             </div>
@@ -132,31 +135,28 @@ export default async function Footer() {
               <span className="txt-small-plus txt-ui-fg-base">Goldbull</span>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
                 <li>
-                  <a
-                    href="http://localhost:8000/sk/store"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/store"
                     className="hover:text-ui-fg-base"
                   >
-                    Products
-                  </a>
+                    {t('footer.products')}
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="http://localhost:8000/sk/account"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/account"
                     className="hover:text-ui-fg-base"
                   >
-                    Account
-                  </a>
+                    {t('footer.account')}
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="http://localhost:8000/sk/cart"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/cart"
                     className="hover:text-ui-fg-base"
                   >
-                    Cart
-                  </a>
+                    {t('footer.cart')}
+                  </LocalizedClientLink>
                 </li>
               </ul>
             </div>
@@ -164,7 +164,7 @@ export default async function Footer() {
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Goldbull. All rights reserved.
+            © {new Date().getFullYear()} Goldbull. {t('footer.rights')}
           </Text>
         </div>
       </div>

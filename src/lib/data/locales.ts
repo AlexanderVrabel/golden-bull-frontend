@@ -22,6 +22,9 @@ export const listLocales = async (): Promise<Locale[] | null> => {
       method: "GET",
       next,
       cache: "force-cache",
+      headers: {
+        "x-medusa-locale": "",
+      },
     })
     .then(({ locales }) => locales)
     .catch(() => null)

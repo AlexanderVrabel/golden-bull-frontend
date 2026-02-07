@@ -8,11 +8,12 @@ import {
   Transition,
 } from "@headlessui/react"
 import { Fragment, useEffect, useMemo, useState, useTransition } from "react"
-import { useRouter } from "next/navigation"
+import { useParams, usePathname, useRouter } from "next/navigation"
 import ReactCountryFlag from "react-country-flag"
 
 import { StateType } from "@lib/hooks/use-toggle-state"
 import { updateLocale } from "@lib/data/locale-actions"
+import { updateRegion } from "@lib/data/cart"
 import { Locale } from "@lib/data/locales"
 
 type LanguageOption = {
@@ -61,12 +62,6 @@ const getLocalizedLanguageName = (
   }
 }
 
-const DEFAULT_OPTION: LanguageOption = {
-  code: "",
-  name: "Default",
-  localizedName: "Default",
-  countryCode: "",
-}
 
 const LanguageSelect = ({
   toggleState,
@@ -78,6 +73,13 @@ const LanguageSelect = ({
   const router = useRouter()
 
   const { state, close } = toggleState
+  const { countryCode } = useParams()
+  const pathname = usePathname()
+
+  const currentPath = useMemo(() => {
+    if (!countryCode || !pathname) return ""
+    return pathname.split(`/${countryCode}`)[1] || ""
+  }, [countryCode, pathname])
 
   const options = useMemo(() => {
     const localeOptions = locales.map((locale) => ({
@@ -90,7 +92,7 @@ const LanguageSelect = ({
       ),
       countryCode: getCountryCodeFromLocale(locale.code),
     }))
-    return [DEFAULT_OPTION, ...localeOptions]
+    return localeOptions
   }, [locales, currentLocale])
 
   useEffect(() => {
@@ -98,17 +100,19 @@ const LanguageSelect = ({
       const option = options.find(
         (o) => o.code.toLowerCase() === currentLocale.toLowerCase()
       )
-      setCurrent(option ?? DEFAULT_OPTION)
-    } else {
-      setCurrent(DEFAULT_OPTION)
+      setCurrent(option)
     }
   }, [options, currentLocale])
 
   const handleChange = (option: LanguageOption) => {
     startTransition(async () => {
       await updateLocale(option.code)
+      if (option.countryCode && !option.code.startsWith("en")) {
+        await updateRegion(option.countryCode.toLowerCase(), currentPath)
+      } else {
+        router.refresh()
+      }
       close()
-      router.refresh()
     })
   }
 
@@ -117,13 +121,7 @@ const LanguageSelect = ({
       <Listbox
         as="span"
         onChange={handleChange}
-        defaultValue={
-          currentLocale
-            ? options.find(
-              (o) => o.code.toLowerCase() === currentLocale.toLowerCase()
-            ) ?? DEFAULT_OPTION
-            : DEFAULT_OPTION
-        }
+        value={current ?? options[0]}
         disabled={isPending}
       >
         <ListboxButton className="py-1 w-full">

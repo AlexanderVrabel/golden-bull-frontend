@@ -11,20 +11,26 @@ import LanguageSelect from "../language-select"
 import { HttpTypes } from "@medusajs/types"
 import { Locale } from "@lib/data/locales"
 
-const SideMenuItems = {
-  Home: "/",
-  Store: "/store",
-  Account: "/account",
-  Cart: "/cart",
-}
-
 type SideMenuProps = {
   regions: HttpTypes.StoreRegion[] | null
   locales: Locale[] | null
   currentLocale: string | null
+  translations: {
+    menu: string
+    home: string
+    store: string
+    account: string
+    cart: string
+  }
 }
 
-const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
+const SideMenu = ({ regions, locales, currentLocale, translations }: SideMenuProps) => {
+  const SideMenuItems = {
+    [translations.home]: "/",
+    [translations.store]: "/store",
+    [translations.account]: "/account",
+    [translations.cart]: "/cart",
+  }
   const countryToggleState = useToggleState()
   const languageToggleState = useToggleState()
 
@@ -39,7 +45,7 @@ const SideMenu = ({ regions, locales, currentLocale }: SideMenuProps) => {
                   data-testid="nav-menu-button"
                   className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
                 >
-                  Menu
+                  {translations.menu}
                 </Popover.Button>
               </div>
 
