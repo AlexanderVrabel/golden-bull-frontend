@@ -10,9 +10,6 @@ import { listRegions } from "@lib/data/regions"
 import { retrieveCustomer } from "@lib/data/customer"
 import { getLocale } from "@lib/data/locale-actions"
 import { getTranslation } from "@lib/i18n/server"
-import { retrieveCustomer } from "@lib/data/customer"
-import { listRegions } from "@lib/data/regions"
-import { notFound } from "next/navigation"
 
 export const metadata: Metadata = {
   title: "Profile",
@@ -98,4 +95,4 @@ export default async function Profile() {
 const Divider = () => {
   return <div className="w-full h-px bg-grey-20" />
 }
-  ; ``
+
