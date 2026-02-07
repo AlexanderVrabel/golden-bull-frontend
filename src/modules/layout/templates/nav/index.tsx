@@ -35,7 +35,6 @@ export default async function Nav() {
               <SideMenu
                 regions={regions}
                 locales={locales}
-                currentLocale={currentLocale}
                 translations={sideMenuTranslations}
               />
             </div>
