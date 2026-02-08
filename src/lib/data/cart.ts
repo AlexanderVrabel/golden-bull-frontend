@@ -14,7 +14,8 @@ import {
   setCartId,
 } from "./cookies"
 import { getRegion } from "./regions"
-import { getLocale } from "@lib/data/locale-actions"
+import { getLocale, setLocaleCookie } from "@lib/data/locale-actions"
+import { languages, fallbackLng } from "@lib/i18n/config"
 
 /**
  * Retrieves a cart by its ID. If no ID is provided, it will use the cart ID from the cookies.
@@ -438,8 +439,11 @@ export async function updateRegion(countryCode: string, currentPath: string) {
     throw new Error(`Region not found for country code: ${countryCode}`)
   }
 
+  const targetLocale = languages.includes(countryCode) ? countryCode : fallbackLng
+  await setLocaleCookie(targetLocale)
+
   if (cartId) {
-    await updateCart({ region_id: region.id })
+    await updateCart({ region_id: region.id, locale: targetLocale })
     const cartCacheTag = await getCacheTag("carts")
     revalidateTag(cartCacheTag)
   }
