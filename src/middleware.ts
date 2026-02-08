@@ -1,5 +1,6 @@
 import { HttpTypes } from "@medusajs/types"
 import { NextRequest, NextResponse } from "next/server"
+import { cookieName, languages } from "@lib/i18n/config"
 
 const BACKEND_URL = process.env.MEDUSA_BACKEND_URL
 const PUBLISHABLE_API_KEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY
@@ -121,7 +122,11 @@ export async function middleware(request: NextRequest) {
 
   // if one of the country codes is in the url and the cache id is set, return next
   if (urlHasCountryCode && cacheIdCookie) {
-    return NextResponse.next()
+    const resp = NextResponse.next()
+    if (countryCode && languages.includes(countryCode)) {
+      resp.cookies.set(cookieName, countryCode)
+    }
+    return resp
   }
 
   // if one of the country codes is in the url and the cache id is not set, set the cache id and redirect
@@ -129,6 +134,10 @@ export async function middleware(request: NextRequest) {
     response.cookies.set("_medusa_cache_id", cacheId, {
       maxAge: 60 * 60 * 24,
     })
+
+    if (countryCode && languages.includes(countryCode)) {
+      response.cookies.set(cookieName, countryCode)
+    }
 
     return response
   }
@@ -153,6 +162,10 @@ export async function middleware(request: NextRequest) {
       "No valid regions configured. Please set up regions with countries in your Medusa Admin.",
       { status: 500 }
     )
+  }
+
+  if (countryCode && languages.includes(countryCode)) {
+    response.cookies.set(cookieName, countryCode)
   }
 
   return response
