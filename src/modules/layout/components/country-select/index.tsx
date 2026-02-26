@@ -88,11 +88,11 @@ const CountrySelect = ({
             country: c.iso_2 ?? "",
             region: r.id,
             label: c.display_name ?? "",
-            localeCode: matchingLocale.code,
+            localeCode: matchingLocale?.code ?? "DE",
             localizedCountryName: getLocalizedCountryName(
               c.iso_2?.toUpperCase() ?? "",
               c.display_name ?? "",
-              matchingLocale.code
+              matchingLocale?.code
             ),
           }
         })
