@@ -26,6 +26,13 @@ export default async function Footer() {
             >
               Goldbull
             </LocalizedClientLink>
+            <div className="flex w-full mb-16 justify-between text-ui-fg-muted max-w-[400px]">
+              GoldBull Nutrition je prémiová značka zameraná na kvalitnú športovú výživu pre ľudí, ktorí chcú získať silu, energiu a maximálne výsledky.
+              Naše proteíny a doplnky sú navrhnuté pre športovcov, kulturistov aj každého, kto chce posúvať svoje hranice.
+            </div>
+          </div>
+          <div>
+            <span className="txt-small-plus txt-ui-fg-base">Kontakt</span>
             <div className="flex flex-col gap-y-2">
               <p></p>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
@@ -34,14 +41,6 @@ export default async function Footer() {
                 </li>
                 <li>
                   {t('footer.phone')}
-                </li>
-                <li>
-                  <LocalizedClientLink
-                    href="/customer-service"
-                    className="hover:text-ui-fg-base"
-                  >
-                    {t('footer.support')}
-                  </LocalizedClientLink>
                 </li>
               </ul>
             </div>

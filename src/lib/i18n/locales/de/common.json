@@ -33,9 +33,8 @@
 		"menu": "Menü"
 	},
 	"footer": {
-		"email": "E-Mail",
-		"phone": "Telefon",
-		"support": "Kundensupport",
+		"email": "E-Mail:",
+		"phone": "Telefon:",
 		"products": "Produkte",
 		"account": "Konto",
 		"cart": "Warenkorb",

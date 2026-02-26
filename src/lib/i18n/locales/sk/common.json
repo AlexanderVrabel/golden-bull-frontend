@@ -33,9 +33,8 @@
 		"menu": "Menu"
 	},
 	"footer": {
-		"email": "Email",
-		"phone": "Telefon",
-		"support": "Zákaznícka podpora",
+		"email": "Email:",
+		"phone": "Telefon:",
 		"products": "Produkty",
 		"account": "Účet",
 		"cart": "Košík",
